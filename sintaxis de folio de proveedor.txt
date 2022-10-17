@@ -1,0 +1,18 @@
+01: Persona Física
+02: Persona Moral
+
+LLL: Tres primeras letras del RFC
+
+LL: Dos letras para identificar el estado
+
+L01: Letra y número para identificar el municipio 
+
+UN: Sucursal única 
+MU: Más de una sucursal
+
+0001: número de sucursal
+
+N: Nacional
+E: Estatal
+
+01 TOM UN OX A02 0001 N
