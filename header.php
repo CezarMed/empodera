@@ -20,7 +20,7 @@ window.location = "index";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Empodera | Acceso plataforma</title>
+  <title>Empodera | Acceso plataforma 4.0</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
