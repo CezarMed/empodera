@@ -3,8 +3,6 @@ error_reporting(0);
 require_once ("header.php");
 require_once ("menu.php");
 ?>
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

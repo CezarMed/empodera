@@ -258,6 +258,7 @@ mysqli_query($con,$queryActualizaServicio);
 
         // pasos para generar la asignacion del servicio de medicamentos en tabla servicioscerradosproveedor
         $array=$_POST["activar"];
+        if ($_POST["activar"]!=''){
         $separado = implode(',', $array);
         $sql11 = "SELECT s.folioEmpodera, sc.idProveedor,  sum(scm.costototal) total, sm.idServicio, sm.idBeneficiario FROM solicitudcotizacionesmedicamentos scm
                    INNER JOIN solicitudcotizaciones sc ON sc.idCotizacion=scm.idCotizacion
@@ -314,7 +315,8 @@ mysqli_query($con,$queryActualizaServicio);
         // ACTUALIZO EL MONTO PARA EL SERVICIO PRINCIPAL
         $actualizaMontoServicio = "UPDATE servicios SET monto=$montoservicio where idServicio=$idServicio";
         $resactualizamontoservicio=mysqli_query($con, $actualizaMontoServicio);
-
+        }
+        
         // consulto el servicio para obtener los folios
         $sqlServicio = "SELECT * FROM servicios where idServicio=$idServicio";
         $resservicio=mysqli_query($con, $sqlServicio);
@@ -339,7 +341,7 @@ mysqli_query($con,$queryActualizaServicio);
         $folioEmpoderaReg=$anonumeros.''.$ceros.''.$idServicio;
 
         // creo el nuevo servicio complementario
-        $queryServic="INSERT INTO servicios (folioServicio, idCuenta,folioEmpodera, idBeneficiario, servicio, observaciones, monto, fechaAlta, idUsuario, servicioprincipal,  estatus)
+        echo $queryServic="INSERT INTO servicios (folioServicio, idCuenta,folioEmpodera, idBeneficiario, servicio, observaciones, monto, fechaAlta, idUsuario, servicioprincipal,  estatus)
         values 
         ('" . $folioServicio ."'," . $idCuenta .",'" . $folioEmpoderaReg ."'," . $idBeneficiario .",'MEDICAMENTOS','SERVICIO COMPLEMENTARIO DEL FOLIO ".$folioEmpodera." '," . $montoservicio2 .",'" . $hoy ."',". $idUsuario .",". $idServiciop .",1)";
         $creaServicio=mysqli_query($con,$queryServic);        

@@ -111,7 +111,7 @@ $totalRegistros=$extraidoValida['totalRegistros'];
 
         if (!$crea) { ?>
         <script type="text/javascript">
-            window.location="altaBenefeci>ario?do=2&folio=<?php echo $folioBene ?>";
+            window.location="altaBenefeciario?do=2&folio=<?php echo $folioBene ?>";
         </script> 
         <?php } else { ?>
         <script type="text/javascript">
@@ -135,6 +135,11 @@ if ($municipio==''){$municipio='0';}
 
 $update="UPDATE beneficiarios set nombreBeneficiario='" . $arrayDatos['nombreBeneficiario'] ."', folioBeneficiario='" . $arrayDatos['folioBeneficiario'] ."', sexo='" . $arrayDatos['sexo'] ."', genero='" . $arrayDatos['genero'] ."', fechaNacimiento='" . $arrayDatos['fechaNac'] ."', entidadFederativa=" . $arrayDatos['entidadFederativa'] .", municipioDelegacion=" . $municipio .", calle='" . $arrayDatos['calle'] ."', colonia='" . $arrayDatos['colonia'] ."', noExteriorInterior='" . $arrayDatos['noExteriorInterior'] ."', codigoPostal='" . $arrayDatos['codigoPostal'] ."', telefonoBeneficiario='" . $arrayDatos['telefonoBeneficiario'] ."', nombreRecibe='" . $arrayDatos['nombreRecibe'] ."', telefonoRecibe='" . $arrayDatos['telefonoRecibe'] ."', referencias='" . $arrayDatos['referencias'] ."' where idBenefeciario=" . $arrayDatos['idBeneficiario'] ."";
             $creas=mysqli_query($con,$update);
+
+            // actualizo el periodo del beneficiario
+            $actualizafechas="UPDATE periodosbeneficiarios SET fechaInicial='" . $arrayDatos['fechaInicio1'] ."', FechaFin='" . $arrayDatos['fechaFin1'] ."' where idPeriodos=" . $arrayDatos['idPeriodo'] ."";
+                mysqli_query($con,$actualizafechas);
+
 
             if ($nuevoperiodo==1) {
                 $actualizafechas="UPDATE periodosbeneficiarios SET estatus=2 where idBeneficiario=" . $arrayDatos['idBeneficiario'] ."";
@@ -279,6 +284,15 @@ function GETPOST() {
             }
             if (array_key_exists('checkboxPrimary2', $_POST)) {
                 $datos_getpost['checkboxPrimary2'] = $_POST['checkboxPrimary2'];
+            }
+            if (array_key_exists('idPeriodo', $_POST)) {
+                $datos_getpost['idPeriodo'] = $_POST['idPeriodo'];
+            }
+            if (array_key_exists('fechaInicio1', $_POST)) {
+                $datos_getpost['fechaInicio1'] = $_POST['fechaInicio1'];
+            }
+            if (array_key_exists('fechaFin1', $_POST)) {
+                $datos_getpost['fechaFin1'] = $_POST['fechaFin1'];
             }
 
                       

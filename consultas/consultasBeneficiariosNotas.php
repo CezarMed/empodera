@@ -8,7 +8,7 @@ if (array_key_exists('consultasSocios', $_POST)) {
 
   if ($buscarpor=='nombreBeneficiario') {
 	$sql="SELECT idBenefeciario, folioBeneficiario, nombreBeneficiario, fechaNacimiento 
-  from beneficiarios where nombreBeneficiario like '%$nombreBeneficiario%'";
+  from beneficiarios where nombreBeneficiario like '%$nombreBeneficiario%' and estatus=1";
 	$res = mysqli_query($conn,$sql);
 	$filas = mysqli_num_rows($res);
 	if ($filas>0) {

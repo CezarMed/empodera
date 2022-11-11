@@ -304,6 +304,7 @@ $NuUs->responderCotizacionEmpodera();
 
             <div class="card-footer">
                   <button type="submit" class="btn btn-success" id="btnEnv" id="btnEnv" name="btnEnv">Responder Cotizaciones</button>
+                  <button type="submit" class="btn btn-warning" id="btnEnv" id="btnEnv" name="btnEnv">Recotizar todos los medicamentos</button>
               </div>
 
 

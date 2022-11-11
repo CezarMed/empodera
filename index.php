@@ -60,16 +60,20 @@ if (isset($_POST['grabar']) and $_POST['grabar'] == 'si') {
         <div class="row">
               <?php if ($_GET['usuario']=="EL_USUARIO_NO_EXISTE") { ?>
       <div class="col-sm-12">
-<div class="alert alert-danger alert-dismissible">
+      <div class="alert alert-danger alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fas fa-ban"></i> Ups!</h5>
                   Datos de acceso no validos
                 </div>
                 </div>
-<?php } ?>
+        <?php } ?>
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-block bg-gradient-success btn-lg">Ingresar a plataforma</button>
+            <button type="submit" class="btn btn-block bg-gradient-dark btn-lg">Ingresar a plataforma</button>
+          </div>
+          <div class="col-12">
+            <p><center>
+              <font size="2px">Versión 4.0</font></center></p>
           </div>
           <!-- /.col -->
         </div>

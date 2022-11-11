@@ -85,20 +85,17 @@ $queryProvee = "SELECT * from servicioscerradosproveedor
         <br><b>DATOS CIE10:</b> <br><?php while ($extraidoCie= mysqli_fetch_array($resCie)) { echo $extraidoCie['cie10'] ?>, <?php echo $extraidoCie['diagnosticocie10'] ?><br>
         <?php } ?>
         <?php 
-        $queryCie = "SELECT * from datoscpt where idServicio=$idServicio";
-              $resCie = mysqli_query($con,$queryCie);
+        $queryCie="SELECT * from datoscpt where idServicio=$idServicio";
+        $resCie = mysqli_query($con,$queryCie);
         ?>
         <br><b>DATOS CPT4:</b> <br><?php while ($extraidoCie= mysqli_fetch_array($resCie)) { echo $extraidoCie['cpt4'] ?>, <?php echo $extraidoCie['tratamientocpt4'] ?><br>
         <?php } ?>
         <?php if ($proveedorname!='') { ?>
            <br><b>PROVEEDOR ASIGNADO: </b><?php echo $nombreComercial ?><br>
-        <?php } ?><br><a class="btn btn-warning btn-sm" href="detalleDeServicio?idBeneficiario=<?php echo $idBeneficiario; ?>&idServicio=<?php echo $idServicio; ?>&idCuenta=<?php echo $idCuenta; ?>">
-                              <i class="fas fa-check">
-                              </i>
-                             Ir al panel de servicio
-                          </a>
-                </div>
-                </div>
+        <?php } ?><br><a class="btn btn-warning btn-sm" href="detalleDeServicio?idBeneficiario=<?php echo $idBeneficiario; ?>&idServicio=<?php echo $idServicio; ?>&idCuenta=<?php echo $idCuenta; ?>"><i class="fas fa-check"></i>Ir al panel de servicio
+                </a>
+               </div>
+              </div>
             </div>
       </div><!-- /.container-fluid -->
     </section>

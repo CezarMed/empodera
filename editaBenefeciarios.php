@@ -157,6 +157,7 @@ $municipioDelegacion=$registros['municipioDelegacion'];
                 <div class="form-group">
                   <label>Entidad Federativa</label>
                   <?php
+                  if ($entidadFederativa==''){$entidadFederativa=0;}
                   $queryEstados = "SELECT clave, nombreEstado from estados where idEstado=$entidadFederativa";
                   $resEstados = mysqli_query($con,$queryEstados);
                   $estadosResult= mysqli_fetch_array($resEstados);
@@ -391,6 +392,7 @@ $municipioDelegacion=$registros['municipioDelegacion'];
             $registros= mysqli_fetch_array($res);
             $fechaInicial=$registros['fechaInicial'];
             $fechaFin=$registros['fechaFin'];
+            $idPeriodo=$registros['idPeriodos'];
             $hoy=date('Y-m-d');
             ?>
 
@@ -399,10 +401,11 @@ $municipioDelegacion=$registros['municipioDelegacion'];
                 <div class="form-group">
                   <label>Fecha de inicio de cobertura</label>
                   <div class="input-group">
+                    <input type="hidden" id="idPeriodo" name="idPeriodo" class="form-control" value="<?php echo $idPeriodo ?>">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" id="fechaInicio1" name="fechaInicio1" class="form-control" value="<?php echo $fechaInicial ?>" readonly>
+                    <input type="text" id="fechaInicio1" name="fechaInicio1" class="form-control" value="<?php echo $fechaInicial ?>">
                   </div>                
                 </div>
               </div>
@@ -413,7 +416,7 @@ $municipioDelegacion=$registros['municipioDelegacion'];
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" id="fechaFin1" name="fechaFin1" class="form-control"value="<?php echo $fechaFin ?>" readonly>
+                    <input type="text" id="fechaFin1" name="fechaFin1" class="form-control"value="<?php echo $fechaFin ?>">
                   </div>                
                 </div>
               </div>

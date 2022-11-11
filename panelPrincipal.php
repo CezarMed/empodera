@@ -195,7 +195,6 @@ require_once ("menu.php");
             <div class="card">
               <div class="card-header">
                 <h5 class="card-title">Listado de medicamentos a solicitar</h5>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>

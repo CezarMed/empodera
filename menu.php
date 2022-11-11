@@ -108,6 +108,12 @@ $con=conexion();
               <p>Agregar Municipios</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="listadoBeneficiarios" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>Listado beneficiarios</p>
+            </a>
+          </li>
           <li class="nav-header"><b>- MINUTAS -</b></li>          
           <li class="nav-item">
             <a href="reporteMinutas" class="nav-link">
